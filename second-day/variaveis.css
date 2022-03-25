@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    background-color: black;
+    color: white;
+}
+
+main {
+    margin: auto;
+    padding: 40px;
+    justify-content: center;
+    font: normal 16px Roboto, monospace;
+}
+
+h1, h2 {
+    color: yellow;
+    text-align: center;
+}
+
+#display {
+    padding: 15px;
+    border: 3px dotted yellow;
+    border-radius: 10px;
+}
+
+p {
+    line-height: 2;
+}
+
+input {
+    line-height: 1.5;
+}
+
+#nome {
+    width: 250px;
+}
+
+#idade {
+    width: 50px;
+}
+
+.btn {
+    text-align: end;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    background-color: yellow;
+    color: black;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-weight: 600;
+}
