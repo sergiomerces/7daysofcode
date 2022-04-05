@@ -33,7 +33,7 @@ h3 {
     text-align: center;
 }
 
-div#botoes {
+div.botoes {
     display: flex;
     justify-content: space-evenly;
     margin-top: 15px;
@@ -48,6 +48,10 @@ button {
     font-size: 16px;
     font-weight: bold;
     margin: 5px;
+}
+
+button#remover {
+    width: 250px;
 }
 
 section#novo {

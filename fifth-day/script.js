@@ -10,6 +10,7 @@ let carrinhoCompra = {
     temperos: []
 }
 let entrada = document.querySelector('section#entrada');
+let lista = document.querySelector('section#lista');
 
 function adicionarItem() {
     entrada.innerHTML = `<p><label for="item">Digite um item  e click sobre a categoria para adicionar:</label></p>
@@ -43,13 +44,13 @@ function adicionarItem() {
     btnLaticinios.addEventListener('click', inserirLaticinios);
     btnMatinais.addEventListener('click', inserirMatinais);
     btnTemperos.addEventListener('click', inserirTemperos);
-    btnFinalizar.addEventListener('click', finalizarEntrada);
+    btnFinalizar.addEventListener('click', exibirItem);
 }
 
 function inserirCereais() {
     item = document.querySelector('input#item').value;
     carrinhoCompra.cereais.push(item);
-    window.alert(`${item} adicionada!`);
+    window.alert(`Adicionado item: ${item}`);
     document.getElementById('item').value = '';
     document.querySelector('input#item').focus();
 }
@@ -57,7 +58,7 @@ function inserirCereais() {
 function inserirCongelados() {
     item = document.querySelector('input#item').value;
     carrinhoCompra.congelados.push(item);
-    window.alert(`${item} adicionada!`);
+    window.alert(`Adicionado item: ${item}`);
     document.getElementById('item').value = '';
     document.querySelector('input#item').focus();
 }
@@ -65,7 +66,7 @@ function inserirCongelados() {
 function inserirDoces() {
     item = document.querySelector('input#item').value;
     carrinhoCompra.doces.push(item);
-    window.alert(`${item} adicionada!`);
+    window.alert(`Adicionado item: ${item}`);
     document.getElementById('item').value = '';
     document.querySelector('input#item').focus();
 }
@@ -73,7 +74,7 @@ function inserirDoces() {
 function inserirFrutas() {
     item = document.querySelector('input#item').value;
     carrinhoCompra.frutas.push(item);
-    window.alert(`${item} adicionada!`);
+    window.alert(`Adicionado item: ${item}`);
     document.getElementById('item').value = '';
     document.querySelector('input#item').focus();
 }
@@ -81,7 +82,7 @@ function inserirFrutas() {
 function inserirHigiene() {
     item = document.querySelector('input#item').value;
     carrinhoCompra.higiene.push(item);
-    window.alert(`${item} adicionada!`);
+    window.alert(`Adicionado item: ${item}`);
     document.getElementById('item').value = '';
     document.querySelector('input#item').focus();
 }
@@ -90,7 +91,7 @@ function inserirLaticinios() {
     console.log('teste');
     item = document.querySelector('input#item').value;
     carrinhoCompra.laticinios.push(item);
-    window.alert(`${item} adicionada!`);
+    window.alert(`Adicionado item: ${item}`);
     document.getElementById('item').value = '';
     document.querySelector('input#item').focus();
 }
@@ -98,7 +99,7 @@ function inserirLaticinios() {
 function inserirMatinais() {
     item = document.querySelector('input#item').value;
     carrinhoCompra.matinais.push(item);
-    window.alert(`${item} adicionada!`);
+    window.alert(`Adicionado item: ${item}`);
     document.getElementById('item').value = '';
     document.querySelector('input#item').focus();
 }
@@ -106,18 +107,14 @@ function inserirMatinais() {
 function inserirTemperos() {
     item = document.querySelector('input#item').value;
     carrinhoCompra.temperos.push(item);
-    window.alert(`${item} adicionada!`);
+    window.alert(`Adicionado item: ${item}`);
     document.getElementById('item').value = '';
     document.querySelector('input#item').focus();
 }
 
-function finalizarEntrada() {
-    entrada.innerHTML = '';
-    exibirItem();
-}
-
 function exibirItem() {
     entrada.innerHTML = '';
+    lista.innerHTML = '';
 
     let listaCompra = document.querySelector('section#lista');
     let categorias = [];
@@ -180,8 +177,70 @@ function exibirItem() {
     }   
 }
 
+function removerItem() {
+    entrada.innerHTML = '';
+    lista.innerHTML = '';
+    item = '';
+
+    entrada.innerHTML = `<p><label for="item">Digite um item  e click em remover:</label></p>
+    <p><input type="text" name="item" id="item"></p>
+    <div><button id="excluir">Excluir</button>
+    <button id="finalizar">finalizar</button></div>`
+
+    const btnFinalizar = document.querySelector('button#finalizar');
+    const btnExcluir = document.querySelector('button#excluir');
+
+    btnFinalizar.addEventListener('click', exibirItem);
+    btnExcluir.addEventListener('click', buscarItem);
+}
+
+function buscarItem() {
+    item = document.querySelector('input#item').value;
+    window.alert('Remover item: ' + item);
+    let indice = '';
+
+    if(carrinhoCompra.cereais.indexOf(item) > -1) {  
+        indice = carrinhoCompra.cereais.indexOf(item);  
+        carrinhoCompra.cereais.splice(indice, 1);
+        exibirItem();
+    } else if(carrinhoCompra.congelados.indexOf(item) > -1) {  
+        indice = carrinhoCompra.congelados.indexOf(item);  
+        carrinhoCompra.congelados.splice(indice, 1);
+        exibirItem();
+    } else if(carrinhoCompra.doces.indexOf(item) > -1) {  
+        indice = carrinhoCompra.doces.indexOf(item);  
+        carrinhoCompra.doces.splice(indice, 1);
+        exibirItem();
+    } else if(carrinhoCompra.frutas.indexOf(item) > -1) {  
+        indice = carrinhoCompra.frutas.indexOf(item);  
+        carrinhoCompra.frutas.splice(indice, 1);
+        exibirItem();
+    } else if(carrinhoCompra.higiene.indexOf(item) > -1) {  
+        indice = carrinhoCompra.higiene.indexOf(item);  
+        carrinhoCompra.higiene.splice(indice, 1);
+        exibirItem();
+    } else if(carrinhoCompra.laticinios.indexOf(item) > -1) {  
+        indice = carrinhoCompra.laticinios.indexOf(item);  
+        carrinhoCompra.laticinios.splice(indice, 1);
+        exibirItem();
+    } else if(carrinhoCompra.matinais.indexOf(item) > -1) {  
+        indice = carrinhoCompra.matinais.indexOf(item);  
+        carrinhoCompra.matinais.splice(indice, 1);
+        exibirItem();
+    } if(carrinhoCompra.temperos.indexOf(item) > -1) {  
+        indice = carrinhoCompra.temperos.indexOf(item);  
+        carrinhoCompra.temperos.splice(indice, 1);
+        exibirItem();
+    } else {
+        window.alert('Esse item não está registrado na lista!');
+        exibirItem();
+    }
+}
+
 const botaoSim = document.querySelector('button#sim');
 const botaoNao = document.querySelector('button#nao');
+const botaoRemoverItem = document.querySelector('button#remover');
 
 botaoSim.addEventListener('click', adicionarItem);
 botaoNao.addEventListener('click', exibirItem);
+botaoRemoverItem.addEventListener('click', removerItem);
