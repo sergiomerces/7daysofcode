@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+body {
+    background-color: black;
+    margin: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    min-width: 374px;
+    height: auto;
+    background-color: rgb(43, 43, 43);
+    margin: 30px;
+    padding: 35px;
+    border: 1px solid yellow;
+}
+
+div.estilo {
+    width: 100%;
+    margin-top: 15px;
+}
+
+div.linha {
+    width: 100%;
+    
+}
+
+p {
+    color: yellow;
+    font: normal 16px Roboto, monospace;
+}
+
+input {
+    width: 435px;
+    margin: 5px;
+    padding: 3px;
+    line-height: 1.5;
+    font-size: 24px;
+    text-align: right;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    font: normal 24px Roboto, monospace;
+    background-color: yellow;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+
+.alinhamento-direita {
+    text-align: right;
+}
