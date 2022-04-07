@@ -106,6 +106,16 @@ function limparDisplay() {
     return;
 }
 
+function sairDoPrograma() {
+    let sair = window.confirm('Deseja fechar a calculadora?');
+
+    if(sair === true) {
+        window.close() 
+    }
+
+    limparDisplay();
+}
+
 const btnZero = document.querySelector('button#zero');
 const btnUm = document.querySelector('button#um');
 const btnDois = document.querySelector('button#dois');
@@ -118,6 +128,7 @@ const btnOito = document.querySelector('button#oito');
 const btnNove = document.querySelector('button#nove');
 const btnPonto = document.querySelector('button#ponto');
 const btnLimpar = document.querySelector('button#limpar');
+const btnSair = document.querySelector('button#sair');
 
 btnZero.addEventListener('click', mostrarZero);
 btnUm.addEventListener('click', mostrarUm);
@@ -131,3 +142,4 @@ btnOito.addEventListener('click', mostrarOito);
 btnNove.addEventListener('click', mostrarNove);
 btnPonto.addEventListener('click', mostrarPonto);
 btnLimpar.addEventListener('click', limparDisplay);
+btnSair.addEventListener('click', sairDoPrograma);
