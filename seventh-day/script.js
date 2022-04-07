@@ -1,4 +1,5 @@
 let display = document.querySelector('input#entrada');
+let expressao = '';
 display.value = '0';
 display.focus();
 
@@ -91,13 +92,29 @@ function mostrarNove() {
 function mostrarPonto() {
     for(let i = 0; i < display.value.length; i++) {
         if(display.value[i] == '.') {
-            alert('Tem ponto!');
+            window.alert('Tem ponto!');
             return
         }
     }
     
     display.value += '.';
     return;
+}
+
+function calcularSoma() {
+    window.alert('Vamos Somar!');
+}
+
+function calcularSubtracao() {
+    window.alert('Vamos Subtrair!');
+}
+
+function calcularMultiplicacao() {
+    window.alert('Vamos Multiplicar!');
+}
+
+function calcularDivisao() {
+    window.alert('Vamos Dividir!');
 }
 
 function limparDisplay() {
@@ -127,6 +144,10 @@ const btnSete = document.querySelector('button#sete');
 const btnOito = document.querySelector('button#oito');
 const btnNove = document.querySelector('button#nove');
 const btnPonto = document.querySelector('button#ponto');
+const btnSoma = document.querySelector('button#soma');
+const btnSubtrai = document.querySelector('button#subtrai');
+const btnMultiplica = document.querySelector('button#multiplica');
+const btnDivide = document.querySelector('button#divide');
 const btnLimpar = document.querySelector('button#limpar');
 const btnSair = document.querySelector('button#sair');
 
@@ -141,5 +162,9 @@ btnSete.addEventListener('click', mostrarSete);
 btnOito.addEventListener('click', mostrarOito);
 btnNove.addEventListener('click', mostrarNove);
 btnPonto.addEventListener('click', mostrarPonto);
+btnSoma.addEventListener('click', calcularSoma);
+btnSubtrai.addEventListener('click', calcularSubtracao);
+btnMultiplica.addEventListener('click', calcularMultiplicacao);
+btnDivide.addEventListener('click', calcularDivisao);
 btnLimpar.addEventListener('click', limparDisplay);
 btnSair.addEventListener('click', sairDoPrograma);
